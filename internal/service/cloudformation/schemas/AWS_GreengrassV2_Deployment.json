@@ -288,7 +288,7 @@
     "Components": {
       "type": "object",
       "patternProperties": {
-        "": {
+        ".+": {
           "$ref": "#/definitions/ComponentDeploymentSpecification"
         }
       },
@@ -303,7 +303,7 @@
     "Tags": {
       "type": "object",
       "patternProperties": {
-        "": {
+        ".*": {
           "type": "string",
           "maxLength": 256
         }
@@ -335,7 +335,6 @@
       "permissions": [
         "greengrass:CreateDeployment",
         "greengrass:GetDeployment",
-        "greengrass:TagResource",
         "iot:CancelJob",
         "iot:CreateJob",
         "iot:DeleteThingShadow",
@@ -358,19 +357,15 @@
     },
     "update": {
       "permissions": [
-        "greengrass:GetDeployment",
         "greengrass:TagResource",
-        "greengrass:UntagResource",
-        "iot:DescribeJob"
+        "greengrass:UntagResource"
       ]
     },
     "delete": {
       "permissions": [
         "greengrass:DeleteDeployment",
         "greengrass:CancelDeployment",
-        "iot:CancelJob",
-        "iot:DeleteJob",
-        "iot:DescribeJob"
+        "iot:DeleteJob"
       ]
     },
     "list": {
